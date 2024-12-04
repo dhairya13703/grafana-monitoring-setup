@@ -1,4 +1,4 @@
 - targets:
   - https://google.com
   labels:
-    customer: google.com
+    customer: customer2

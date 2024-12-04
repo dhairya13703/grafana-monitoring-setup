@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
   "iteration": 1600975868828,
   "links": [],
   "panels": [
@@ -587,8 +586,29 @@
   "templating": {
     "list": [
       {
+        "allValue": null,
         "current": {
-          "selected": false,
+          "text": "customer1",
+          "value": "customer1"
+        },
+        "hide": 2,
+        "includeAll": false,
+        "label": "customer",
+        "multi": false,
+        "name": "customer",
+        "options": [
+          {
+            "selected": true,
+            "text": "customer1",
+            "value": "customer1"
+          }
+        ],
+        "query": "customer1",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "current": {
           "text": "website-monitoring-http",
           "value": "website-monitoring-http"
         },
@@ -603,7 +623,6 @@
           }
         ],
         "query": "website-monitoring-http",
-        "queryValue": "",
         "skipUrlSync": false,
         "type": "constant"
       }
@@ -615,7 +634,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Overview",
-  "uid": "OmAoLmKGk",
+  "uid": "customer1-overview",
+  "title": "Overview - Customer 1",
   "version": 1
 }

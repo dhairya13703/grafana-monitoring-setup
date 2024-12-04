@@ -1174,68 +1174,44 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
-          "text": "",
-          "value": ""
+          "text": "customer2",
+          "value": "customer2"
         },
+        "hide": 2,
+        "includeAll": false,
+        "label": "customer",
+        "multi": false,
+        "name": "customer",
+        "options": [
+          {
+            "selected": true,
+            "text": "customer2",
+            "value": "customer2"
+          }
+        ],
+        "query": "customer2",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "allValue": null,
         "datasource": "Prometheus",
-        "definition": "label_values(instance)",
+        "definition": "label_values(probe_success{customer=\"$customer\"}, instance)",
         "hide": 0,
         "includeAll": false,
         "label": "target",
         "multi": false,
         "name": "target",
         "options": [],
-        "query": "label_values(instance)",
+        "query": "label_values(probe_success{customer=\"$customer\"}, instance)",
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
-      },
-      {
-        "current": {
-          "selected": false,
-          "text": "website-monitoring-http",
-          "value": "website-monitoring-http"
-        },
-        "hide": 2,
-        "label": "http_job",
-        "name": "http_job",
-        "options": [
-          {
-            "selected": true,
-            "text": "website-monitoring-http",
-            "value": "website-monitoring-http"
-          }
-        ],
-        "query": "website-monitoring-http",
-        "skipUrlSync": false,
-        "type": "constant"
-      },
-      {
-        "current": {
-          "selected": false,
-          "text": "website-monitoring-icmp",
-          "value": "website-monitoring-icmp"
-        },
-        "hide": 2,
-        "label": "icmp_job",
-        "name": "icmp_job",
-        "options": [
-          {
-            "selected": true,
-            "text": "website-monitoring-icmp",
-            "value": "website-monitoring-icmp"
-          }
-        ],
-        "query": "website-monitoring-icmp",
-        "skipUrlSync": false,
-        "type": "constant"
       }
     ]
   },
@@ -1245,7 +1221,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Website monitoring",
-  "uid": "EmUBHUFGk",
+  "uid": "customer2-web-mon",
+  "title": "Website monitoring - Customer 2",
   "version": 1
 }

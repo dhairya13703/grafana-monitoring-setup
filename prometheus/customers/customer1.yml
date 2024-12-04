@@ -1,4 +1,4 @@
 - targets:
   - https://gitlab.iqinfinite.in
   labels:
-    customer: gitlab
+    customer: customer1
