@@ -62,7 +62,7 @@
       "pluginVersion": "7.2.0",
       "targets": [
         {
-          "expr": "count(count by (instance) (probe_http_status_code{job=\"$http_job\"}))",
+          "expr": "count(count by (instance) (probe_http_status_code{customer=\"$customer\", job=\"$http_job\"}))",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -130,7 +130,7 @@
       "pluginVersion": "7.2.0",
       "targets": [
         {
-          "expr": "((count(count by (instance) (probe_http_ssl{job=\"$http_job\"} == 1))) / (count(count by (instance) (probe_http_ssl{job=\"$http_job\"})))) * 100",
+          "expr": "((count(count by (instance) (probe_http_ssl{customer=\"$customer\", job=\"$http_job\"} == 1))) / (count(count by (instance) (probe_http_ssl{customer=\"$customer\", job=\"$http_job\"})))) * 100",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -198,7 +198,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "probe_http_status_code{job=\"$http_job\"} != 200",
+          "expr": "probe_http_status_code{customer=\"$customer\", job=\"$http_job\"} != 200",
           "interval": "",
           "legendFormat": "{{ instance }}",
           "refId": "A"
@@ -302,7 +302,7 @@
       "pluginVersion": "7.2.0",
       "targets": [
         {
-          "expr": "((count(count by (instance) (probe_http_status_code == 200))) / (count(count by (instance) (probe_http_status_code)))) * 100",
+          "expr": "((count(count by (instance) (probe_http_status_code{customer=\"$customer\"} == 200))) / (count(count by (instance) (probe_http_status_code{customer=\"$customer\"})))) * 100",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -491,7 +491,7 @@
       "pluginVersion": "7.2.0",
       "targets": [
         {
-          "expr": "probe_http_status_code{job=\"$http_job\"}",
+          "expr": "probe_http_status_code{customer=\"$customer\", job=\"$http_job\"}",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -499,7 +499,7 @@
           "refId": "A"
         },
         {
-          "expr": "probe_http_redirects{job=\"$http_job\"} - 0",
+          "expr": "probe_http_redirects{customer=\"$customer\", job=\"$http_job\"} - 0",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -507,7 +507,7 @@
           "refId": "B"
         },
         {
-          "expr": "probe_http_ssl{job=\"$http_job\"} - 0",
+          "expr": "probe_http_ssl{customer=\"$customer\", job=\"$http_job\"} - 0",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -515,7 +515,7 @@
           "refId": "C"
         },
         {
-          "expr": "probe_http_version{job=\"$http_job\"} - 0",
+          "expr": "probe_http_version{customer=\"$customer\", job=\"$http_job\"} - 0",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -523,7 +523,7 @@
           "refId": "D"
         },
         {
-          "expr": "((probe_ssl_earliest_cert_expiry{job=\"$http_job\"}) - time()) / (60*60*24) - 0",
+          "expr": "((probe_ssl_earliest_cert_expiry{customer=\"$customer\", job=\"$http_job\"}) - time()) / (60*60*24) - 0",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -531,7 +531,7 @@
           "refId": "E"
         },
         {
-          "expr": "probe_duration_seconds{job=\"$http_job\"} - 0",
+          "expr": "probe_duration_seconds{customer=\"$customer\", job=\"$http_job\"} - 0",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -539,7 +539,7 @@
           "refId": "F"
         },
         {
-          "expr": "probe_dns_lookup_time_seconds{job=\"$http_job\"} - 0",
+          "expr": "probe_dns_lookup_time_seconds{customer=\"$customer\", job=\"$http_job\"} - 0",
           "format": "table",
           "instant": true,
           "interval": "",
